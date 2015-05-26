@@ -52,8 +52,9 @@ Octoblu setup!
 You need to get a 'firmware' type UUID and token for Octoblu.
 
 You can get this by opening a terminal, and running:
+```
     curl -X POST -d "type=firmwareController&payloadOnly=true&name=Arduino" https://meshblu.octoblu.com/devices
-
+```
 It should return something like this:
 ```
     {"geo":{"range":[2227419722,1427320735],"country":"US","region":"","city":"","ll":[38,-97],"metro":0},
