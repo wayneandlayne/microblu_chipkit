@@ -31,15 +31,15 @@ Wifi Setup!
 You'll need to specify the SSID of your Wifi (and password if you have one.)
 You can do that by changing the line:
 
-const char * szSsid = "YOUR_SSID";
+    const char * szSsid = "YOUR_SSID";
 
 You choose authentication by uncommenting ONLY ONE of the following lines:
 
-//#define USE_WPA2_PASSPHRASE
-//#define USE_WPA2_KEY
-//#define USE_WEP40
-//#define USE_WEP104
-//#define USE_WF_CONFIG_H
+    //#define USE_WPA2_PASSPHRASE
+    //#define USE_WPA2_KEY
+    //#define USE_WEP40
+    //#define USE_WEP104
+    //#define USE_WF_CONFIG_H
 
 You probably want WPA2_PASSPHRASE, but maybe you have an access point setup with the other ways.  There are
 examples below.
@@ -52,19 +52,19 @@ Octoblu setup!
 You need to get a 'firmware' type UUID and token for Octoblu.
 
 You can get this by opening a terminal, and running:
-  curl -X POST -d "type=firmwareController&payloadOnly=true&name=Arduino" https://meshblu.octoblu.com/devices
+    curl -X POST -d "type=firmwareController&payloadOnly=true&name=Arduino" https://meshblu.octoblu.com/devices
 
 It should return something like this:
-  {"geo":{"range":[2227419722,1427320735],"country":"US","region":"","city":"","ll":[38,-97],"metro":0},
-  "ipAddress":"73.37.123.12","name":"Arduino","online":false,"payloadOnly":"true",
-  "timestamp":"2015-05-24T02:00:57.433Z","type":"firmwareController",
-  "uuid":"YOUR-UUID-HERE","token":"YOURTOKENHERE"}%
+    {"geo":{"range":[2227419722,1427320735],"country":"US","region":"","city":"","ll":[38,-97],"metro":0},
+      "ipAddress":"73.37.123.12","name":"Arduino","online":false,"payloadOnly":"true",
+      "timestamp":"2015-05-24T02:00:57.433Z","type":"firmwareController",
+      "uuid":"YOUR-UUID-HERE","token":"YOURTOKENHERE"}%
 
 Fill in the two lines below to match the output of the curl command, and uncomment them by removing the two
 leading //
 
-//char UUID[]  = "YOUR-UUID-HERE";
-//char TOKEN[] = "YOURTOKENHERE";
+    //char UUID[]  = "YOUR-UUID-HERE";
+    //char TOKEN[] = "YOURTOKENHERE";
 
 Getting started
 ===============
