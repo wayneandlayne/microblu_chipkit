@@ -7,7 +7,6 @@ It has been confirmed to work with digitalWrites.  I can toggle LEDs on the boar
 
 Things to check on/do:
  * Remove many of the debug print statements.
- * Wait for Keith's response about using the code in connect without licensing the entire sketch as BSD.
  * Test Firmata!  I am pretty sure not all the digital pins work due to "gaps" in the count?
  * Add Firmata support for Wifire and then test on Wifire!
  * Test the other Firmata support pieces, like Servo, digitalRead, analogRead, analogWrite.
@@ -23,6 +22,7 @@ Install the following libraries into your sketchbook library folder.
  * Requires DEIPcK and DEWFcK which should be included in your MPIDE or UECIDE.
  * Requires CKClient: https://github.com/wayneandlayne/ckclient
  * Requires Firmata (with WF32 support): https://github.com/wayneandlayne/firmata
+ * Requires Microblu MQTT: https://github.com/octoblu/microblu_mqtt
 
 
 Wifi Setup!

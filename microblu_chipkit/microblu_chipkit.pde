@@ -15,6 +15,7 @@
  * Requires DEIPcK and DEWFcK which should be included in your MPIDE or UECIDE.
  * Requires CKClient: https://github.com/wayneandlayne/ckclient
  * Requires Firmata (with WF32 support): https://github.com/wayneandlayne/firmata
+ * Requires Microblu MQTT: https://github.com/octoblu/microblu_mqtt
  *
  * This sketch was based on the Ethernet Shield version, so many of the comments and RAM-optimizations may be
  * unnecessary.
