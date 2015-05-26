@@ -56,9 +56,9 @@ You can get this by opening a terminal, and running:
 
 It should return something like this:
     {"geo":{"range":[2227419722,1427320735],"country":"US","region":"","city":"","ll":[38,-97],"metro":0},
-      "ipAddress":"73.37.123.12","name":"Arduino","online":false,"payloadOnly":"true",
-      "timestamp":"2015-05-24T02:00:57.433Z","type":"firmwareController",
-      "uuid":"YOUR-UUID-HERE","token":"YOURTOKENHERE"}%
+    "ipAddress":"73.37.123.12","name":"Arduino","online":false,"payloadOnly":"true",
+    "timestamp":"2015-05-24T02:00:57.433Z","type":"firmwareController",
+    "uuid":"YOUR-UUID-HERE","token":"YOURTOKENHERE"}%
 
 Fill in the two lines below to match the output of the curl command, and uncomment them by removing the two
 leading //
