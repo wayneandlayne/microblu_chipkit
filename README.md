@@ -68,6 +68,8 @@ leading //
     //char UUID[]  = "YOUR-UUID-HERE";
     //char TOKEN[] = "YOURTOKENHERE";
 
+Log into Octoblu, and open a new flow.  Click the little plus, Available Nodes.  Click Arduino, in the middle of the list.  Then click Setup.  Then scroll down, and claim an existing device, and then add your UUID and token.
+
 Getting started
 ===============
 
@@ -77,7 +79,7 @@ or so, it should connect to your wifi and start connecting to Octoblu.
 Right now, the error handling isn't very good, and pull requests to both documentation and the code would be
 greatly appreciated!
 
-Go to the Octoblu designer, and make a new workflow with an operator node of Trigger, and a configured node of Ardiuno.
+Go to the Octoblu designer, and make a new workflow with an operator node of Trigger, and a configured node of Arduino.
 
 Connect the output of the trigger to the input of the Arduino.  Then, add an operator node of Delay, and another configured
 node of Arduino.  Connect the output of the trigger to the delay too, and the output of the delay to the Arduino.
