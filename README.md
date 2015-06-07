@@ -23,13 +23,21 @@ Install the following libraries into your sketchbook library folder.
  * Requires CKClient: https://github.com/wayneandlayne/ckclient
  * Requires Firmata (with WF32 support): https://github.com/wayneandlayne/firmata
  * Requires Microblu MQTT: https://github.com/octoblu/microblu_mqtt
+ 
+Or, just download this zip file (which contains all of the above) and drop it's contents into your sketchbook library folder. (For example, C:\Users\Brian\Documents\mpide\libraries under Windows) https://github.com/wayneandlayne/microblu_chipkit/raw/master/microblu_chipkit_libraries.zip
+
+Sketch Setup!
+=============
+Copy the microblu_chipkit folder from this repo into your sketchbook folder, and then open up the microblu_chipkit.pde file in MPIDE.
+
+Select the WF32 board from the Tools->Board->chipKIT->ChipKIT WF32 menu.
 
 
 Wifi Setup!
 ===========
 
-You'll need to specify the SSID of your Wifi (and password if you have one.)
-You can do that by changing the line:
+In the microblue_chipkit.pde sketch, you'll need to specify the SSID of your Wifi (and password if you have one.)
+You do that by changing YOUR_SSID to the SSID of your WiFi access point in the line:
 
     const char * szSsid = "YOUR_SSID";
 
@@ -44,7 +52,7 @@ You choose authentication by uncommenting ONLY ONE of the following lines:
 You probably want WPA2_PASSPHRASE, but maybe you have an access point setup with the other ways.  There are
 examples below.
 
-Then, you need to set the password if you have one.  There are examples in the beginning.
+Then, you need to set the password if you have one.  There are examples in the beginning of the sketch.
 
 Octoblu setup!
 ==============
@@ -62,7 +70,7 @@ It should return something like this:
     "timestamp":"2015-05-24T02:00:57.433Z","type":"firmwareController",
     "uuid":"YOUR-UUID-HERE","token":"YOURTOKENHERE"}%
 ```
-Fill in the two lines below to match the output of the curl command, and uncomment them by removing the two
+In the sketch, fill in the two lines below to match the output of the curl command, and uncomment them by removing the two
 leading //
 
     //char UUID[]  = "YOUR-UUID-HERE";
@@ -71,26 +79,40 @@ leading //
 Getting started
 ===============
 
-When you start, use the Serial Terminal to watch things.  It should print some pin callbacks, and after 30 seconds
-or so, it should connect to your wifi and start connecting to Octoblu.
+When you start, use the Serial Terminal to watch things.  It should print some pin callbacks (like "setPinModeCallback: 0,1", etc.), and after 30 seconds or so, it should connect to your wifi and start connecting to Octoblu.
+
+When this connection is established, you will see something like this on the Serial Terminal:
+```
+WiFi connected
+connecting...
+MQIsdpÂ'mb_afb7cb2e-d64b-475d-afda-10cd4320d1a0$afb7cb2e-d64b-475d-afda-10cd4320d1a0(2027173c340154e9d9d89218b7e7e7989a1ff617
+20,2,0,0,
+connected
+)8:$afb7cb2e-d64b-475d-afda-10cd4320d1a0
+```
 
 Right now, the error handling isn't very good, and pull requests to both documentation and the code would be
 greatly appreciated!
 
-Go to the Octoblu designer, and make a new workflow with an operator node of Trigger, and a configured node of Ardiuno.
+Setting up the Octoblu flow
+===========================
+
+Go to the Octoblu designer, and make a new workflow with an operator node of Trigger, and a configured node of Arduino. To create the Arduino node and get it to show up in your 'configured' node list, you will need to select it from the 'available' node list, then click 'setup' to configure that Arduino. When you do so, you will want to choose the 'Claim an existing device' option, and then put in the name of this Arduino node instance (like "WF32"), and your UUID and Token that you put into the sketch. These must match (Octoblu Arduino node and sketch) in order for the connection to be made. Once your Arduino (WF32) has been setup, it will appear in the 'configured' pallet and you can click on it to create a new node in the flow. 
 
 Connect the output of the trigger to the input of the Arduino.  Then, add an operator node of Delay, and another configured
 node of Arduino.  Connect the output of the trigger to the delay too, and the output of the delay to the Arduino.
 
-Then, set the arduino directly connected to the trigger to digitalWrite pin 13 to 1, and the second Arduino
-to digitalWrite pin 13 to 0.  Set the delay to whatever you want.  Go to the top right, and press start.
+Then, set the Arduino directly connected to the trigger to digitalWrite pin 13 to 1, and the second Arduino
+to digitalWrite pin 13 to 0.  Set the delay to whatever you want (like 5 seconds).  Go to the top right, and press start.
 It's the green rectangle with the play triangle.
 
-When you click the box that looks like a big input to the trigger, the trigger, first Arduino, and delay block should
-grow for a second.  Then, after a delay, the delay block and second arduino will also grow.
+![Proper Octoblu Flow setup example](https://github.com/wayneandlayne/microblu_chipkit/Flow.png)
 
-There should be some activity in the Serial Terminal, and then the red light by BTN3 will light up indicating
-activity, and LD6 near VR1 should blink for about however long the delay was!
+When you click the box that looks like a big input to the trigger, the trigger, first Arduino, and delay block should
+grow for a second.  Then, after the delay, the delay block and second Arduino will also grow.
+
+There should be some activity in the Serial Terminal when you first click, and then after the delay as well, and then the red led by BTN3 will light up indicating
+serial activity, and green LED LD6 near VR1 should blink for about however long the delay was!
 
 Awesome!
 
