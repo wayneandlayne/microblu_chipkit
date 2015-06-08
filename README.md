@@ -76,6 +76,8 @@ leading //
     //char UUID[]  = "YOUR-UUID-HERE";
     //char TOKEN[] = "YOURTOKENHERE";
 
+Log into Octoblu, and open a new flow.  Click the little plus, Available Nodes.  Click Arduino, in the middle of the list.  Then click Setup.  Then scroll down, and claim an existing device, and then add your UUID and token.
+
 Getting started
 ===============
 
@@ -85,7 +87,7 @@ When this connection is established, you will see something like this on the Ser
 ```
 WiFi connected
 connecting...
-MQIsdpÃ‚'mb_afb7cb2e-d64b-475d-afda-10cd4320d1a0$afb7cb2e-d64b-475d-afda-10cd4320d1a0(2027173c340154e9d9d89218b7e7e7989a1ff617
+MQIsdpÂ'mb_afb7cb2e-d64b-475d-afda-10cd4320d1a0$afb7cb2e-d64b-475d-afda-10cd4320d1a0(2027173c340154e9d9d89218b7e7e7989a1ff617
 20,2,0,0,
 connected
 )8:$afb7cb2e-d64b-475d-afda-10cd4320d1a0
