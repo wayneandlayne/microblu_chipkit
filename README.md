@@ -108,7 +108,7 @@ Then, set the Arduino directly connected to the trigger to digitalWrite pin 13 t
 to digitalWrite pin 13 to 0.  Set the delay to whatever you want (like 5 seconds).  Go to the top right, and press start.
 It's the green rectangle with the play triangle.
 
-![Proper Octoblu Flow setup example](https://github.com/wayneandlayne/microblu_chipkit/Flow.png)
+![Proper Octoblu Flow setup example](https://github.com/wayneandlayne/microblu_chipkit/blob/master/Flow.png)
 
 When you click the box that looks like a big input to the trigger, the trigger, first Arduino, and delay block should
 grow for a second.  Then, after the delay, the delay block and second Arduino will also grow.
